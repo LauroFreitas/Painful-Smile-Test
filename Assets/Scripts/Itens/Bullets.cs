@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class Bullets : MonoBehaviour
 {
     private Rigidbody2D m_Rigidbody;
+    public float speed;
+    public float timer;
     // Start is called before the first frame update
     private void Awake()
     {
         m_Rigidbody = transform.GetComponent<Rigidbody2D>();
-        m_Rigidbody.AddForce(transform.right * 3f, ForceMode2D.Impulse);
-        Destroy(gameObject, 1);
+        m_Rigidbody.AddForce(transform.right * speed, ForceMode2D.Impulse);
+        Destroy(gameObject, timer);
     }
     private void OnTriggerEnter(Collider other)
     {
