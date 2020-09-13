@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Terren
+  - Enemy
+  - Play
+  - Restart
+  - Menu
+  - Bullet
   layers:
   - Default
   - TransparentFX
