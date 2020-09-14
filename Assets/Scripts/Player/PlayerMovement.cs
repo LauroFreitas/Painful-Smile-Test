@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public float maxVerticalSpeed;
     public float maxRotationSpeed;
     public float Speed;
-
-
     void FixedUpdate()
     {
         Move();

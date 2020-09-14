@@ -9,7 +9,6 @@ public class PlayerShoot : MonoBehaviour
     Transform sideShoot;
     Transform sideShoot2;
     Transform sideShoot3;
-    public Enemy a;
     private void Awake()
     {
         frontalShoot = transform.GetChild(0).transform.GetChild(0).transform;
