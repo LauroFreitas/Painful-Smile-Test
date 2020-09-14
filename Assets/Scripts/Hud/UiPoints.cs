@@ -13,4 +13,9 @@ public class UiPoints : MonoBehaviour
         pointInt += points;
         pointText.text = pointInt.ToString();
     }
+    public void ResetPoints() 
+    {
+        pointInt = 0;
+        pointText.text = pointInt.ToString();
+    }
 }

@@ -12,11 +12,7 @@ public class GameOver : State
 
     public override void Execute()
     {
-        GameObject gameOverView = GameObject.Find("GameOverView");
-        gameOverView.SetActive(true);
-        gameOverView.transform.GetChild(0).gameObject.SetActive(true);
-        Time.timeScale = 0;
-        Game.singleton.GameOver();
+        Game.singleton.m_StateMachine.ChangeState(Game.singleton.estadoNavegacao);
+         
     }
-  
 }

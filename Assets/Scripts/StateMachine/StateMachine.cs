@@ -18,21 +18,17 @@ public class StateMachine
     {
         if (newState == currentState)
         {
-           // Debug.Log("Já está no estado " + currentState.Name);
-            
             return;
         }
             
         else
         {
-            //Estado anterior vai receber o estado que está rodando na máquina
             previousState = currentState;
-
+            
             if(previousState != null)
                 Debug.Log(previousState.Name);
 
             Debug.Log(newState.Name);
-            //Estado atual da máquina recebe o novo estado do parâmetro
             currentState = newState;
         }
     }

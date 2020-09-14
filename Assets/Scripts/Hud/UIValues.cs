@@ -12,8 +12,8 @@ public class UIValues : MonoBehaviour
 
     public void Start()
     {
-        ValueSessonTimeUpdate(2);//Valor inicial para a Sesson mudar para 60 depois
-        ValueEnemyTimeSpawnUpdate(1);//Valor inicial para a Sesson mudar para 60 depois
+        ValueSessonTimeUpdate(10);//Valor inicial para a Sesson mudar para 60 depois
+        ValueEnemyTimeSpawnUpdate(3);//Valor inicial para a Sesson mudar para 60 depois
     }
     public void ValueEnemyTimeSpawnUpdate(float _value)
     {

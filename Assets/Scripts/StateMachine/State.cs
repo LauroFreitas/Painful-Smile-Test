@@ -8,6 +8,6 @@ public abstract class State
     
     public virtual void Execute()
     {
-      //  Debug.Log("Executando o estado " + Name);
+        Game.singleton.m_StateMachine.RunState();
     }
 }

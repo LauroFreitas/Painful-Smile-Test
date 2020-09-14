@@ -9,11 +9,13 @@ public class UiTimer : MonoBehaviour
     public GameObject GameOverImage;
     [SerializeField] public float time { get; private set;}
     public float timeInput;
+    
     private void Start()
     {
-        timeInput = float.Parse(UIValues._valueSessonTime);
+        timeInput = Game.singleton.estadoNavegacao.sessionTime;
         time = timeInput;
     }
+     
     public void FixedUpdate()
     {
         Decrease();
@@ -25,8 +27,12 @@ public class UiTimer : MonoBehaviour
         time -= 1f * Time.deltaTime;
         if (time <= 0) 
         {
+            GameOverImage.SetActive(true);
             time = timeInput;
-            Game.singleton.estadoJogando.OnGameOver();
+            Game.singleton.m_StateMachine.ChangeState(Game.singleton.GameOverState);
+            Game.singleton.m_StateMachine.RunState();
+            Game.singleton.GameOver();
+            Time.timeScale = 0;
         }
     }
 }

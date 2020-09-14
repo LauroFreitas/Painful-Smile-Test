@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider hudLife;
     public int maxHealth = 100;
     public int currentHealth;
+    public GameObject GameOverImage;
     virtual public void Start()
     {
         currentHealth = maxHealth;
@@ -26,5 +27,21 @@ public class PlayerHealth : MonoBehaviour
     virtual public void SetHealth(int health)
     {
         hudLife.value = health;
+    }
+    private void Update()
+    {
+        if (currentHealth <= 0) 
+        {
+            GameOverImage.SetActive(true);
+            SetMaxHealth(100);
+            SetHealth(100);
+            currentHealth = 100;
+            Game.singleton.m_StateMachine.ChangeState(Game.singleton.GameOverState);
+            Game.singleton.m_StateMachine.RunState();
+            Game.singleton.GameOver();
+            
+            Time.timeScale = 0;
+            
+        }
     }
 }

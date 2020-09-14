@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Playing : State
 {
-  
     public Playing(string name)
     {
         Name = name;
@@ -12,10 +11,7 @@ public class Playing : State
 
     public override void Execute()
     {
-        Time.timeScale = 1;
+        Game.singleton.StartSpawn(Game.singleton.estadoNavegacao.spawnETime);
     }
-    public void OnGameOver() 
-    {
-        Game.singleton.m_StateMachine.ChangeState(Game.singleton.GameOverState);
-    }
+   
 }
