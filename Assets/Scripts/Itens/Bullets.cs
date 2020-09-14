@@ -20,6 +20,7 @@ public class Bullets : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(20);
+            this.gameObject.SetActive(false);
         }
     }
 }

@@ -26,7 +26,6 @@ public class EnemyShooter : Enemy
            StopCoroutine(Shooting());
         }
     }
-    
     IEnumerator Shooting() 
     {
         for (int i = 0; i < 999999999; i++)

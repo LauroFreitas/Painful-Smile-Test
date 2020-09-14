@@ -486,6 +486,12 @@ MonoBehaviour:
   hudLife: {fileID: 1286587011486418163}
   maxHealth: 100
   currentHealth: 0
+  deteriorationStage1: {fileID: 21300000, guid: 2360053e972f72748bc370909208d39b,
+    type: 3}
+  deteriorationStage2: {fileID: 21300000, guid: 94a04d96b4dca7d40b193b7e1740ad65,
+    type: 3}
+  deteriorationStage3: {fileID: 21300000, guid: 5206913d39be87a47ad0f3126ace7584,
+    type: 3}
   offset: -90
   bullets: {fileID: 2060685608401531359, guid: 6227ed5c373f634479b97ff8c757d603, type: 3}
 --- !u!114 &2732136950632579704
@@ -581,6 +587,28 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5045139772648190947}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5045139773499742507}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!1 &5045139772622019730
 GameObject:

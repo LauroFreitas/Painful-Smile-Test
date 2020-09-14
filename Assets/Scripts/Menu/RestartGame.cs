@@ -8,6 +8,7 @@ public class RestartGame : MonoBehaviour
 {
     public void Restart()
     {
+        SceneManager.LoadScene("Game");
         Time.timeScale = 1;
         Game.singleton.m_StateMachine.ChangeState(Game.singleton.estadoJogando);
         Game.singleton.m_StateMachine.RunState();

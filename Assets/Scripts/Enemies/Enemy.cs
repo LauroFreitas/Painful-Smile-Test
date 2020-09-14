@@ -7,6 +7,11 @@ public abstract class Enemy : MonoBehaviour
     public Slider hudLife;
     public int maxHealth = 100;
     public int currentHealth;
+    public Sprite deteriorationStage1;
+    public Sprite deteriorationStage2;
+    public Sprite deteriorationStage3;
+
+
    [SerializeField] public Transform target { get; private set;}
     private Vector3 targetPos;
     private Vector3 thisPos;
@@ -40,12 +45,25 @@ public abstract class Enemy : MonoBehaviour
     virtual public void Update()
     {
         Death();
+        Deterioration();
     }
+    virtual public void Deterioration() 
+    {
+        if (currentHealth <= 60 && currentHealth > 40)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = deteriorationStage1;
+        }
+
+        if (currentHealth <= 20 && currentHealth > 0)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = deteriorationStage2;
+        }
+    }
+
     virtual public void Death() 
     {
         if(currentHealth <= 0) 
         {
-            Debug.Log("A");
             StartCoroutine(DeathAnimation());
         }
     }
@@ -53,8 +71,7 @@ public abstract class Enemy : MonoBehaviour
     {
         hudLife.value = health;
     }
-
-   public IEnumerator DeathAnimation() 
+   virtual public IEnumerator DeathAnimation() 
    {
         var MetaEvents = this.gameObject.GetComponent<MetaEventSet>();
         
@@ -78,9 +95,38 @@ public abstract class Enemy : MonoBehaviour
         {
             MetaEvents.metaEvents[2].Event.Invoke();
         }
-
-        Debug.Log("teste");
-            this.gameObject.SetActive(false);
+      
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = deteriorationStage3;
+        this.gameObject.SetActive(false);
         target.GetComponent<UiPoints>().AddPoints(1);
    }
+
+    virtual public IEnumerator DeathAnimation2()
+    {
+        var MetaEvents = this.gameObject.GetComponent<MetaEventSet>();
+
+        yield return new WaitForSeconds(0.3f);
+
+        if (MetaEvents.metaEvents[0].ID == 1)
+        {
+            MetaEvents.metaEvents[0].Event.Invoke();
+        }
+
+        yield return new WaitForSeconds(0.3f);
+
+        if (MetaEvents.metaEvents[1].ID == 1)
+        {
+            MetaEvents.metaEvents[1].Event.Invoke();
+        }
+
+        yield return new WaitForSeconds(0.3f);
+
+        if (MetaEvents.metaEvents[2].ID == 1)
+        {
+            MetaEvents.metaEvents[2].Event.Invoke();
+        }
+
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = deteriorationStage3;
+        this.gameObject.SetActive(false);
+    }
 }

@@ -27,12 +27,20 @@ public class UiTimer : MonoBehaviour
         time -= 1f * Time.deltaTime;
         if (time <= 0) 
         {
-            GameOverImage.SetActive(true);
-            time = timeInput;
-            Game.singleton.m_StateMachine.ChangeState(Game.singleton.GameOverState);
-            Game.singleton.m_StateMachine.RunState();
-            Game.singleton.GameOver();
-            Time.timeScale = 0;
+            GameOver();
         }
+    }
+
+    public void GameOver() 
+    {
+        Vector3 respawnPoint = new Vector3(0, 0, 0);
+        Transform player = FindObjectOfType<PlayerMovement>().transform;
+        player.position = respawnPoint;
+        GameOverImage.SetActive(true);
+        time = timeInput;
+        Game.singleton.m_StateMachine.ChangeState(Game.singleton.GameOverState);
+        Game.singleton.m_StateMachine.RunState();
+        Game.singleton.GameOver();
+        Time.timeScale = 0;
     }
 }

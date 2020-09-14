@@ -295,6 +295,12 @@ MonoBehaviour:
   hudLife: {fileID: 3275916980642420629}
   maxHealth: 100
   currentHealth: 0
+  deteriorationStage1: {fileID: 21300000, guid: 48a65e58399dfea4aa6ec75ea0d361ca,
+    type: 3}
+  deteriorationStage2: {fileID: 21300000, guid: 7af9126c14fa98842bd3aab9ee654842,
+    type: 3}
+  deteriorationStage3: {fileID: 21300000, guid: a3a5b1ed4777d7141b7aee7bc9e5d58a,
+    type: 3}
 --- !u!114 &3275916980270772161
 MonoBehaviour:
   m_ObjectHideFlags: 0
