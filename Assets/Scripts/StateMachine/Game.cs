@@ -1,15 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Game : MonoBehaviour
 {
     public static Game singleton { get; private set; }
     public StateMachine m_StateMachine = new StateMachine();
-    public Navigation estadoNavegacao;
-    public Playing estadoJogando;
-    public Paused estadoPausado;
-    public GameOver GameOverState;
+    public Navigation navegationState;
+    public Playing playingState;
+    public Paused pausadState;
+    public GameOver gameOverState;
     private void Awake()
     {
         if (singleton != this && singleton == null)
@@ -24,11 +23,11 @@ public class Game : MonoBehaviour
     }
     void Start()
     {
-        estadoNavegacao = new Navigation("Navegação");
-        estadoJogando = new Playing("Jogando");
-        estadoPausado = new Paused("Pausado");
-        GameOverState = new GameOver("GameOver");
-        m_StateMachine.ChangeState(estadoNavegacao);
+        navegationState = new Navigation("Navegação");
+        playingState = new Playing("Jogando");
+        pausadState = new Paused("Pausado");
+        gameOverState = new GameOver("GameOver");
+        m_StateMachine.ChangeState(navegationState);
 
     }
     public void StartSpawn(int spawnTime)

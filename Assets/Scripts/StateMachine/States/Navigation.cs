@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-public class Navigation : State
+﻿public class Navigation : State
 {
     public int sessionTime;
     public int spawnETime;
@@ -15,7 +10,7 @@ public class Navigation : State
     public override void Execute()
     {
         GetValues();
-        Game.singleton.m_StateMachine.ChangeState(Game.singleton.estadoJogando);
+        Game.singleton.m_StateMachine.ChangeState(Game.singleton.playingState);
         Game.singleton.m_StateMachine.RunState();
         
     }

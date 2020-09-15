@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Paused : State
 {
@@ -15,7 +13,7 @@ public class Paused : State
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Game.singleton.m_StateMachine.ChangeState(Game.singleton.estadoJogando);
+            Game.singleton.m_StateMachine.ChangeState(Game.singleton.playingState);
         }
     }
 }

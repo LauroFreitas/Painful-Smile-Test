@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UiTimer : MonoBehaviour
@@ -12,7 +10,7 @@ public class UiTimer : MonoBehaviour
     
     private void Start()
     {
-        timeInput = Game.singleton.estadoNavegacao.sessionTime;
+        timeInput = Game.singleton.navegationState.sessionTime;
         time = timeInput;
     }
      
@@ -33,10 +31,8 @@ public class UiTimer : MonoBehaviour
 
     public void GameOver() 
     {
-        Debug.LogError("A");
-        
         time = timeInput;
-        Game.singleton.m_StateMachine.ChangeState(Game.singleton.GameOverState);
+        Game.singleton.m_StateMachine.ChangeState(Game.singleton.gameOverState);
         Game.singleton.m_StateMachine.RunState();
         Game.singleton.GameOver();
         Time.timeScale = 0;

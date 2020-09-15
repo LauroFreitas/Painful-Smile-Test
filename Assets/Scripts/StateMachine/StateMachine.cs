@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StateMachine
 {
@@ -26,8 +24,6 @@ public class StateMachine
             previousState = currentState;
             
             if(previousState != null)
-                Debug.Log(previousState.Name);
-
             Debug.Log(newState.Name);
             currentState = newState;
         }

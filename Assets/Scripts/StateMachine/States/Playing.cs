@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Playing : State
+﻿public class Playing : State
 {
     public Playing(string name)
     {
@@ -11,7 +7,7 @@ public class Playing : State
 
     public override void Execute()
     {
-        Game.singleton.StartSpawn(Game.singleton.estadoNavegacao.spawnETime);
+        Game.singleton.StartSpawn(Game.singleton.navegationState.spawnETime);
     }
    
 }

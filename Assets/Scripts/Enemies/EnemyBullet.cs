@@ -1,14 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
     private Rigidbody2D m_Rigidbody;
     public float speed;
     public float timer;
-    // Start is called before the first frame update
     private void Awake()
     {
         m_Rigidbody = transform.GetComponent<Rigidbody2D>();

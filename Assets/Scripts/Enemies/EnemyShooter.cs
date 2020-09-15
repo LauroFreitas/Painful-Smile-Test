@@ -1,10 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyShooter : Enemy
 {
-    public float Speed;
     public GameObject bullets;
     Transform frontalShoot;
 

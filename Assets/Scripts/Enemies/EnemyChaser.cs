@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyChaser : Enemy
 {
-    public float Speed;
-
+    float Speed;
     public override void Update()
     {
+        Speed = 4;
         base.Update();
         transform.position = Vector3.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
         transform.LookAt(target, Vector3.up);
