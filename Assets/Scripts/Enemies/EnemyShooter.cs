@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyShooter : Enemy
 {
+    public float Speed;
     public GameObject bullets;
     Transform frontalShoot;
 

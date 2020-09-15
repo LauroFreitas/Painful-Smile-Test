@@ -33,14 +33,13 @@ public class UiTimer : MonoBehaviour
 
     public void GameOver() 
     {
-        Vector3 respawnPoint = new Vector3(0, 0, 0);
-        Transform player = FindObjectOfType<PlayerMovement>().transform;
-        player.position = respawnPoint;
-        GameOverImage.SetActive(true);
+        Debug.LogError("A");
+        
         time = timeInput;
         Game.singleton.m_StateMachine.ChangeState(Game.singleton.GameOverState);
         Game.singleton.m_StateMachine.RunState();
         Game.singleton.GameOver();
         Time.timeScale = 0;
+        GameOverImage.SetActive(true);
     }
 }

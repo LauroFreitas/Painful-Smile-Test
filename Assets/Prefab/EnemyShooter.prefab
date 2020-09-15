@@ -493,6 +493,7 @@ MonoBehaviour:
   deteriorationStage3: {fileID: 21300000, guid: 5206913d39be87a47ad0f3126ace7584,
     type: 3}
   offset: -90
+  Speed: 1
   bullets: {fileID: 2060685608401531359, guid: 6227ed5c373f634479b97ff8c757d603, type: 3}
 --- !u!114 &2732136950632579704
 MonoBehaviour:
